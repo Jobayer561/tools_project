@@ -3,9 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo App</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-    
+
+<section class=" max-w-7xl mx-auto">
+<div class="flex flex-col justify-center items-center ">
+
+    <h1 class="my-6 text-3xl font-semibold text-gray-700">Todo App</h1>
+
+<fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border-1 border-gray-200 rounded-md p-4">
+  <legend class="fieldset-legend">SignUp</legend>
+ <label class="label">Name</label>
+  <input id="name" type="text" class="input" placeholder="Name" />
+  <label class="label">Email</label>
+  <input id="email" type="email" class="input" placeholder="Email" />
+
+  <label class="label">Password</label>
+  <input id="password" type="password" class="input" placeholder="Password" />
+
+  <button id="signbtn" class="btn btn-info text-white mt-4">Sign Up</button>
+</fieldset>
+<fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border-1 border-gray-200 rounded-md p-4">
+  <legend class="fieldset-legend">SignIn</legend>
+
+  <label class="label">Email</label>
+  <input id="email" type="email" class="input" placeholder="Email" />
+
+  <label class="label">Password</label>
+  <input id="password" type="password" class="input" placeholder="Password" />
+
+  <button id="signbtn" class="btn btn-info text-white mt-4">Sign In</button>
+</fieldset>
+<div id="app"></div>
+
+
+</div>
+</section>
+
+    <script src="./app.js"></script>
 </body>
 </html>

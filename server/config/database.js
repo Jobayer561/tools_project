@@ -13,12 +13,13 @@ const client = new MongoClient(uri, {
 });
 
 let db;
+let userCollection;
 let todoCollection;
 
 export async function connectDb() {
   try {
-    if (db && todoCollection) {
-      return { db, todoCollection, client };
+    if (db && userCollection && todoCollection) {
+      return { db,userCollection, todoCollection, client };
     }
 
     await client.connect();
@@ -27,9 +28,10 @@ export async function connectDb() {
     console.log("MongoDB Connected Successfully hello world");
 
     db = client.db("tools");
-    todoCollection = db.collection("apps");
+    userCollection = db.collection("users");
+    todoCollection = db.collection("todos");
 
-    return { db, todoCollection, client };
+    return { db, userCollection, todoCollection, client };
   } catch (err) {
     console.error("MongoDB connection error:", err);
     throw err;
