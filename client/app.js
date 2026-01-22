@@ -53,7 +53,32 @@ addTodoBtn.addEventListener('click', async () => {
         todoInput.value = '';
     }
 });
+
+
 const todoList = document.getElementById('todo-list');
+
+
+
+async function fetchTodos() {
+    try {
+        const res = await fetch(`${API}/todos`);
+        const todos = await res.json();
+        todoList.innerHTML = '';    
+        todos.forEach(todo => {
+            const li = document.createElement('li');
+            li.textContent = todo.text;
+            li.className = 'border-b py-2';
+            todoList.appendChild(li);
+        }
+        );
+    } catch (error) {
+        console.error('Error fetching todos:', error);
+    }   
+}
+
+
+fetchTodos();
+
 
 
 

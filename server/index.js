@@ -3,6 +3,8 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import {connectDb} from './config/database.js';
 import userRoutes from './routes/userRoutes.js';
+import todoRouteS from './routes/todoRoutes.js';
+
 dotenv.config();
 
 const app = express();
@@ -15,6 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/users', userRoutes);
+app.use('/todos', todoRouteS); 
 const startServer = async () => {
   try {
     await connectDb();
