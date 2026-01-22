@@ -14,7 +14,8 @@
 
     <h1 class="my-6 text-3xl font-semibold text-gray-700">Todo App</h1>
 
-<fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border-1 border-gray-200 rounded-md p-4">
+<div class="flex justify-between items-center gap-4">
+    <fieldset class="fieldset bg-base-200 border-base-300 rounded-box w-xs border-1 border-gray-200 rounded-md p-4">
   <legend class="fieldset-legend">SignUp</legend>
  <label class="label">Name</label>
   <input id="name" type="text" class="input" placeholder="Name" />
@@ -30,14 +31,24 @@
   <legend class="fieldset-legend">SignIn</legend>
 
   <label class="label">Email</label>
-  <input id="email" type="email" class="input" placeholder="Email" />
+  <input id="logemail" type="email" class="input" placeholder="Email" />
 
   <label class="label">Password</label>
-  <input id="password" type="password" class="input" placeholder="Password" />
+  <input id="logpassword" type="password" class="input" placeholder="Password" />
 
-  <button id="signbtn" class="btn btn-info text-white mt-4">Sign In</button>
+  <button id="signinbtn" class="btn btn-info text-white mt-4">Sign In</button>
 </fieldset>
-<div id="app"></div>
+</div>
+<div id="app">
+
+    <h1 class="text-3xl font-semibold my-4 text-center">Todo App</h1>
+    <div>
+        <input class="input input-info" type="text" id="todo-input" placeholder="Enter a todo" />
+        <button id="add-todo-btn" class="btn btn-info text-white w-full mt-4">Add Todo</button>
+
+</div>
+    <ul id="todo-list" class="mt-4 w-full">
+    </ul>
 
 
 </div>
